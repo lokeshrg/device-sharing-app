@@ -1,0 +1,18 @@
+<br/>
+<div>Booking Details for: <h5>{{iData.name}}</h5></div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group"> 
+      <!--class="form-group"-->
+        <div >
+          <label for="requestingUser">Name</label>
+          <input type="text" name="requestingUser" id="requestingUser" placeholder="Enter your name..." ngModel >
+        </div>
+        <div >
+          <label for="datetime-local-input">Date and time</label>
+          <input type="datetime-local" name="datenow" id="datetime-local-input" ngModel>
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" (click)="submitBForm(f)">Book</button>&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="resetBForm()">Cancel</button>
+</form>

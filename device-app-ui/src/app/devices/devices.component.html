@@ -1,0 +1,22 @@
+ <!--<h4>Device details</h4>-->
+ <div class="container">
+ <div class="row">
+  <h2 class="col-3 border border-secondary text-light bg-dark">Device name</h2>
+  <h2 class="col-2 border border-secondary text-light bg-dark">Available</h2>
+  <h2 class="col-3 border border-secondary text-light bg-dark">Actions</h2>
+  <h2 class="col-4 border border-secondary text-light bg-dark">Booking Details</h2>
+</div>
+ <div class="row" *ngFor="let device of devices">
+  <div class="col-3 border border-dark text-center">{{device.name}}</div>
+  <div class="col-2 border border-dark text-center">{{device.status}}</div>
+  <div class="col-3 border border-dark text-center">
+      <a href="#" (click)="getDetails(device.name, device.position)">Details</a> &nbsp;&nbsp;
+      <a *ngIf='device.status == "yes"' [routerLink]="['/bookd', device]">Book</a>
+      <a *ngIf='device.status == "no"' [routerLink]="['/returnd', device]">Return</a>
+  </div>
+  <div class="col-4 border border-dark text-center">
+    <div *ngIf="device.status=='no'">{{device.user}} - {{device.date}}</div>
+    <div *ngIf="device.status=='yes'">None</div>
+  </div>
+</div>
+</div>
