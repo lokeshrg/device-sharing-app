@@ -14,3 +14,6 @@ Following are the endpoints exposed:
 /allDevices : to list some 10 devices
 /detail/{name}/{brand}/{position} : to get details about a device for a given brand and name, position is internally used to retrieve specific details from fono api as documentation on fono api is not clear about retrieving device info
 [this has to based on trial and error to get the right device for a choice]
+
+## Note:
+As dependencies are being removed here, run gradle assemble to get dependencies into your local build folder
